@@ -1,0 +1,6 @@
+<h3><strong> {{data.description}}</strong></h3>
+<div class="row">
+  <button class="col-5 btn btn-secondary" (click)="actionClick(action.config.label)" *ngFor="let action of data.actions">
+    {{action.config.label}}
+  </button>
+</div>

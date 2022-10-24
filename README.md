@@ -1,7 +1,11 @@
 # YatraNotification
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.2.6.
+This project is to create a Notification List which expands into different action, where action loaded dynamically
 
+## Project Structure
+The project has 2 modules. Action Module - where all actions are created and mapped to the actionType.
+When new action created, it should be mapped to respective actionType name in action module.
+App Module - where notification-list component created. Notification-list fetches API responses services/action.service.ts.
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.

@@ -1,0 +1,39 @@
+<div *ngIf="notificationArray.length > 0 else noNotification" class="container box">
+  <div class="container" *ngFor="let notification of notificationArray;let i = index">
+    <div class="col-12" class="card">
+      <div (click)="toggle(i)" class="card-block">
+          <h3 class="card-title">{{notification.message}}</h3>
+          <h4 class="card-title-from">{{notification.from?.name}}</h4>
+      </div>
+
+      <div class="action border border-dark" *ngIf="hideRuleContent[i]">
+        <app-notification-action [notificationData]="notification"></app-notification-action>
+      </div>
+    </div>
+  </div>
+</div>
+
+<ng-template #noNotification>
+  No notification found
+</ng-template>
+<!-- -------------------------------------------------------------- -->
+
+<!-- <div class="col-6">
+  <mat-accordion>
+    <mat-expansion-panel *ngFor="let notification of notificationArray; let i = index" hideToggle>
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          <div class="row">
+            <div class="notification-box col-12">
+              <span class="notification-message">{{notification.message}}</span>
+              <div class="notification-user">{{notification.from.name}}</div>
+            </div>
+          </div>
+        </mat-panel-title>
+      </mat-expansion-panel-header>
+      <div>
+        <app-notification-action [notificationData]="notification"></app-notification-action>
+      </div>
+    </mat-expansion-panel>
+  </mat-accordion>
+</div> -->
